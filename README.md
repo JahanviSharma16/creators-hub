@@ -1,4 +1,4 @@
-# Creator Hub - MERN Stack Application
+# Creator Hub Application
 
 A responsive mini web application where creators can showcase content and users can browse, search, and discover amazing educational resources.
 
