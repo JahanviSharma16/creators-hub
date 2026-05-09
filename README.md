@@ -237,45 +237,12 @@ The frontend will run on `http://localhost:3000`
 - Local component state for UI interactions
 - URL parameters for routing and filtering
 
-## 🚀 Deployment
-
-### Backend Deployment (Heroku Example)
-```bash
-# Install Heroku CLI
-heroku create your-app-name
-
-# Set environment variables
-heroku config:set MONGODB_URI=your_mongodb_uri
-heroku config:set JWT_SECRET=your_jwt_secret
-
-# Deploy
-git push heroku main
-```
 
 ### Frontend Deployment (Netlify/Vercel)
 1. Build the application: `npm run build`
 2. Deploy the `build` folder to your hosting provider
 3. Set environment variables for API URL
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📝 Future Enhancements
-
-- User authentication and authorization
-- Payment integration for content purchases
-- Content upload and management for creators
-- User reviews and ratings system
-- Wishlist and bookmark functionality
-- Notification system
-- Content recommendations
-- Creator analytics dashboard
-- Multi-language support
 
 ## 📄 License
 
