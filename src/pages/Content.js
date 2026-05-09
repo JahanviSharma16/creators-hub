@@ -84,7 +84,8 @@ const Content = () => {
     });
     
     return filtered;
-  }, [content, searchTerm, selectedCategory, minPrice, maxPrice, sortBy, sortOrder]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm, selectedCategory, minPrice, maxPrice, sortBy, sortOrder]);
   
   useEffect(() => {
     console.log('Content.js - Setting display content:', filteredContent.length, 'items');
@@ -105,7 +106,8 @@ const Content = () => {
         setIsModalOpen(true);
       }
     }
-  }, [id, content]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   const handleContentClick = (contentItem) => {
     setSelectedContent(contentItem);

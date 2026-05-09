@@ -24,7 +24,8 @@ const Creators = () => {
       creator.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       creator.bio.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }, [searchTerm, creators]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm]);
   
   useEffect(() => {
     console.log('Creators.js - Setting filtered creators:', filteredCreators.length);
@@ -50,7 +51,8 @@ const Creators = () => {
         setIsModalOpen(true);
       }
     }
-  }, [id, creators]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   const handleCreatorClick = (creator) => {
     setSelectedCreator(creator);

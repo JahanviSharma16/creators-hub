@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ContentCard from '../components/ContentCard';
 import { useContext } from 'react';
 import ThemeContext from '../context/ThemeContext';
-import { allCreators as creators, allContent as content } from '../data/sampleData';
+import { allCreators, allContent as content } from '../data/sampleData';
 
 const Home = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -13,9 +13,10 @@ const Home = () => {
 
   useEffect(() => {
     // Set data from local sample data
-    setCreators(creators.slice(0, 3)); // Show 3 featured creators
+    setCreators(allCreators.slice(0, 3)); // Show 3 featured creators
     setFeaturedContent(content.filter(item => item.featured).slice(0, 6)); // Show 6 featured content items
     setLoading(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {

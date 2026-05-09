@@ -2,7 +2,11 @@
 
 A responsive mini web application where creators can showcase content and users can browse, search, and discover amazing educational resources.
 
-## 🚀 Features
+## 🔗 Live Demo
+
+**Production URL:** https://creators-hub-xi.vercel.app/
+
+## � Features
 
 ### ✅ Core Features
 - **Creator Profile Section**: Display creator information, bio, profile images, social links, and banner/hero sections
@@ -285,4 +289,4 @@ This project is licensed under the MIT License.
 
 ---
 
-**Built with ❤️ by creators, for creators**
+**Built with ❤️ by jenny*
