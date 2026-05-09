@@ -1,70 +1,288 @@
-# Getting Started with Create React App
+# Creator Hub - MERN Stack Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive mini web application where creators can showcase content and users can browse, search, and discover amazing educational resources.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+### ✅ Core Features
+- **Creator Profile Section**: Display creator information, bio, profile images, social links, and banner/hero sections
+- **Content Listing**: Minimum 3+ content cards with title, description, price, thumbnail, and "View Details" buttons
+- **Detail View**: Modal-based content details with full descriptions, tags, preview sections, and CTA buttons
+- **Search Functionality**: Real-time search across content titles, descriptions, and tags
+- **Filter & Sort**: Filter by category, price range, and sort by price, rating, popularity, and date
+- **Dark/Light Mode**: Toggle between dark and light themes with system preference detection
+- **Dynamic Rendering**: Fully responsive design with mobile-first approach
 
-### `npm start`
+### 🎨 UI/UX Features
+- Modern, clean interface with Tailwind CSS v3
+- Gradient accents and smooth transitions
+- Verified creator badges
+- Featured content highlighting
+- Rating and enrollment statistics
+- Responsive grid layouts
+- Loading states and error handling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠 Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
+- **Node.js** - JavaScript runtime
+- **Express.js** - Web framework
+- **MongoDB** - NoSQL database
+- **Mongoose** - MongoDB object modeling
+- **CORS** - Cross-origin resource sharing
+- **dotenv** - Environment variable management
+- **bcryptjs** - Password hashing (for future auth)
+- **jsonwebtoken** - JWT tokens (for future auth)
 
-### `npm test`
+### Frontend
+- **React** - UI library
+- **React Router** - Client-side routing
+- **Tailwind CSS v3** - Utility-first CSS framework
+- **Axios** - HTTP client
+- **Context API** - State management for theme
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📁 Project Structure
 
-### `npm run build`
+```
+Creator Hub/
+├── backend/
+│   ├── models/
+│   │   ├── Creator.js
+│   │   └── Content.js
+│   ├── routes/
+│   │   ├── creators.js
+│   │   └── content.js
+│   ├── seed.js
+│   ├── server.js
+│   ├── .env
+│   └── package.json
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Header.js
+│   │   │   ├── Footer.js
+│   │   │   ├── ContentCard.js
+│   │   │   └── Modal.js
+│   │   ├── context/
+│   │   │   └── ThemeContext.js
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── Content.js
+│   │   │   └── Creators.js
+│   │   ├── App.js
+│   │   └── index.css
+│   ├── public/
+│   ├── package.json
+│   └── tailwind.config.js
+└── README.md
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Setup Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Clone Repository
+```bash
+git clone <repository-url>
+cd "Creator Hub"
+```
 
-### `npm run eject`
+### 2. Frontend Setup (Frontend-Only Application)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Install Dependencies
+```bash
+cd frontend
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Start Frontend Development Server
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The frontend will run on `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📊 API Endpoints
 
-## Learn More
+### Creators
+- `GET /api/creators` - Get all creators
+- `GET /api/creators/:id` - Get creator by ID
+- `POST /api/creators` - Create new creator
+- `PUT /api/creators/:id` - Update creator
+- `DELETE /api/creators/:id` - Delete creator
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Content
+- `GET /api/content` - Get all content (supports search, filter, sort)
+- `GET /api/content/:id` - Get content by ID
+- `POST /api/content` - Create new content
+- `PUT /api/content/:id` - Update content
+- `DELETE /api/content/:id` - Delete content
+- `GET /api/content/creator/:creatorId` - Get content by creator
+- `GET /api/content/categories/list` - Get all categories
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Query Parameters for Content API
+- `search` - Search term
+- `category` - Filter by category
+- `minPrice` - Minimum price filter
+- `maxPrice` - Maximum price filter
+- `sortBy` - Sort field (createdAt, price, rating, enrollments, title)
+- `sortOrder` - Sort order (asc, desc)
+- `creator` - Filter by creator ID
+- `featured` - Filter featured content (true/false)
 
-### Code Splitting
+## 🎯 Usage Guide
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Navigation
+- **Home** (`/`) - Landing page with featured creators and content
+- **Content** (`/content`) - Browse all content with search and filters
+- **Creators** (`/creators`) - View all creator profiles
 
-### Analyzing the Bundle Size
+### Features Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Search & Filter
+1. Use the search bar to find content by title, description, or tags
+2. Expand filters to filter by category and price range
+3. Use sort dropdowns to order results by different criteria
 
-### Making a Progressive Web App
+#### Dark/Light Mode
+- Click the theme toggle button in the header
+- Theme preference is saved to localStorage
+- System preference is automatically detected on first visit
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Content Details
+- Click "View Details" on any content card to see full information
+- Modal displays preview images, full descriptions, tags, and statistics
+- Click "Enroll Now" for enrollment (placeholder functionality)
 
-### Advanced Configuration
+#### Creator Profiles
+- View creator information, social links, and bio
+- Click "View Profile" for detailed creator information
+- Click "View Content" to see all content from that creator
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🎨 Design Features
 
-### Deployment
+### Responsive Design
+- Mobile-first approach with breakpoints for tablets and desktops
+- Flexible grid layouts that adapt to screen size
+- Touch-friendly interface elements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Visual Elements
+- Gradient backgrounds and buttons
+- Smooth hover transitions and micro-interactions
+- Verified badges and featured indicators
+- Star ratings and enrollment counters
 
-### `npm run build` fails to minify
+### Accessibility
+- Semantic HTML5 structure
+- ARIA labels for interactive elements
+- Keyboard navigation support
+- High contrast ratios for readability
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔧 Development Notes
+
+### Database Schema
+
+#### Creator Model
+```javascript
+{
+  name: String,
+  bio: String,
+  profileImage: String,
+  bannerImage: String,
+  socialLinks: {
+    website: String,
+    twitter: String,
+    instagram: String,
+    youtube: String,
+    linkedin: String
+  },
+  email: String,
+  verified: Boolean
+}
+```
+
+#### Content Model
+```javascript
+{
+  title: String,
+  description: String,
+  fullDescription: String,
+  price: Number,
+  thumbnail: String,
+  preview: String,
+  category: String,
+  tags: [String],
+  creator: ObjectId,
+  featured: Boolean,
+  rating: Number,
+  enrollments: Number
+}
+```
+
+### Component Architecture
+- **Header**: Navigation and theme toggle
+- **Footer**: Links and social media
+- **ContentCard**: Reusable content display card
+- **Modal**: Overlay for content details
+- **ThemeContext**: Global theme state management
+
+### State Management
+- React Context API for theme management
+- Local component state for UI interactions
+- URL parameters for routing and filtering
+
+## 🚀 Deployment
+
+### Backend Deployment (Heroku Example)
+```bash
+# Install Heroku CLI
+heroku create your-app-name
+
+# Set environment variables
+heroku config:set MONGODB_URI=your_mongodb_uri
+heroku config:set JWT_SECRET=your_jwt_secret
+
+# Deploy
+git push heroku main
+```
+
+### Frontend Deployment (Netlify/Vercel)
+1. Build the application: `npm run build`
+2. Deploy the `build` folder to your hosting provider
+3. Set environment variables for API URL
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📝 Future Enhancements
+
+- User authentication and authorization
+- Payment integration for content purchases
+- Content upload and management for creators
+- User reviews and ratings system
+- Wishlist and bookmark functionality
+- Notification system
+- Content recommendations
+- Creator analytics dashboard
+- Multi-language support
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgments
+
+- Tailwind CSS for the amazing utility-first CSS framework
+- Unsplash for the beautiful placeholder images
+- React and the amazing open-source community
+
+---
+
+**Built with ❤️ by creators, for creators**
